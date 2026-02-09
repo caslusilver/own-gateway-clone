@@ -1,0 +1,29 @@
+.one-click-buy-option
+    position relative
+
+    .input-radio
+        display none
+
+    .radio
+        background $secondary
+        color $secondarytext
+        cursor pointer
+        display flex
+        justify-content space-between
+        margin 0 0 10px
+        padding $one-click-buy-option-paddding
+        width 100%
+
+        ~/ .input-radio:checked + ^[1..-1]
+            background $primary
+            color $primarytext
+
+    .brand
+        object-fit contain
+        width 40px
+
+    .asaas-cc-form-wrapper
+        display none
+
+        ~/ .input-radio:checked ~ ^[1..-1]
+            display block

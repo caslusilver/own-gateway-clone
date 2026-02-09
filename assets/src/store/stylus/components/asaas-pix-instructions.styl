@@ -1,0 +1,14 @@
+.asaas-pix-instructions
+    --asaas-pix-instructions_flex-direction column-reverse
+    --asaas-pix-instructions__list_margin-left 0
+
+    @media screen and ( min-width $screen-lg )
+        --asaas-pix-instructions_flex-direction row
+        --asaas-pix-instructions__list_margin-left 30px
+
+    display flex
+    flex-direction var( --asaas-pix-instructions_flex-direction )
+
+    &__list
+        margin-left var( --asaas-pix-instructions__list_margin-left )
+        width 100%

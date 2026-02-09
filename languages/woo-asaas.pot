@@ -1,0 +1,1305 @@
+# Copyright (C) 2026 Lucas Andrade / AI
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: own-gateway-clone 0.0.1\n"
+"Report-Msgid-Bugs-To: https://github.com/caslusilver/own-gateway-clone\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-11-14T14:47:06+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: checkout-tabs-wp-ml\n"
+
+#. Plugin Name of the plugin
+#: woo-asaas.php
+msgid "own-gateway-clone"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: woo-asaas.php
+msgid "https://github.com/caslusilver/own-gateway-clone"
+msgstr ""
+
+#. Description of the plugin
+#: woo-asaas.php
+msgid "Gateway de pagamentos via PIX com webhook para WooCommerce."
+msgstr ""
+
+#. Author of the plugin
+#: woo-asaas.php
+msgid "Lucas Andrade / AI"
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:23
+msgid "Pay your purchase with credit card."
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:31
+msgid "Order minimum total"
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:33
+msgid "The order minimum total to allow use this payment method. Use <code>0</code> to disable this option."
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:39
+msgid "One-Click Buy"
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:41
+msgid "Enable one-click buy"
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:42
+msgid "To enable one-click buy please contact your Asaas manager."
+msgstr ""
+
+#: includes/admin/settings/class-credit-card.php:62
+#: includes/billing-type/class-credit-card.php:42
+msgid "Credit Card"
+msgstr ""
+
+#: includes/admin/settings/class-pix.php:32
+msgid "Pay your purchase with Pix."
+msgstr ""
+
+#: includes/admin/settings/class-pix.php:45
+msgid "Expiration Period"
+msgstr ""
+
+#: includes/admin/settings/class-pix.php:47
+msgid "Pix validity after purchase. At the end of this period, the Pix will be removed. The value can be minutes (<code>10m</code> for 10 minutes), hours (<code>3h</code> for 3 hours) or days (<code>1d</code> for 1 day). If you do not enter <code>m</code>, <code>h</code> or <code>d</code>, the default will be <code>d</code>. Leave blank to not expire. The minimum period is 10 minutes."
+msgstr ""
+
+#: includes/admin/settings/class-pix.php:54
+msgid "Copy and paste"
+msgstr ""
+
+#: includes/admin/settings/class-pix.php:56
+msgid "Enable copy and paste"
+msgstr ""
+
+#: includes/admin/settings/class-pix.php:107
+#: includes/billing-type/class-pix.php:42
+msgid "Pix"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:112
+msgid "Gateway"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:116
+msgid "API"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:120
+msgid "Subscriptions"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:124
+msgid "Advanced Options"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:142
+msgid "Enable/Disable"
+msgstr ""
+
+#. translators: %s: billing type name
+#: includes/admin/settings/class-settings.php:145
+#, php-format
+msgid "Enable Asaas %s"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:151
+msgid "Title"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:153
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:161
+msgid "Description"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:163
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:164
+msgid "Pay your order using Asaas."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:170
+msgid "Open payment order status"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:172
+msgid "Status that the order will be saved when the customer makes a purchase and the order is not yet paid. <code>On hold</code> reduces stock, sends an email to the customer and to the shopkeeper. <code>Pending payment</code> does not reduce stock or send an email. This option is shared with other Asaas payment methods."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:177
+msgid "Pending payment"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:178
+msgid "On hold"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:182
+msgid "Enviroment"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:184
+msgid "Define the environment that will be used in your store's API calls. Select <code>Production</code> to use the actual transaction environment. If you are only testing the tool or are still in a testing period, select <code>Sandbox</code>. Each environment has its own key, remember to use the key corresponding to the selected environment."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:190
+msgid "Production"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:191
+msgid "Sandbox"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:195
+msgid "API Key"
+msgstr ""
+
+#. translators: %s: Asaas integration settings panel URL
+#: includes/admin/settings/class-settings.php:198
+#, php-format
+msgid "The API Key used to connect with Asaas. <a href=\"%s\">Click here</a> to get it."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:205
+msgid "Notification between Asaas and customer"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:207
+msgid "Enable Notification"
+msgstr ""
+
+#. translators: %s: Asaas integration settings panel URL
+#: includes/admin/settings/class-settings.php:209
+msgid "Allow Asaas to send email and SMS about the purchase and notify him periodically while the purchase is not paid."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:216
+msgid "Debug log"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:218
+msgid "Enable logging"
+msgstr ""
+
+#. translators: %s: log page link
+#: includes/admin/settings/class-settings.php:221
+#, php-format
+msgid "Log Asaas API and webhook communication, inside %s."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:227
+msgid "This option is shared with another Asaas gateway."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:372
+msgid "Status &gt; Logs"
+msgstr ""
+
+#: includes/admin/settings/class-ticket.php:23
+msgid "Pay your purchase with ticket."
+msgstr ""
+
+#: includes/admin/settings/class-ticket.php:29
+msgid "Validity Days"
+msgstr ""
+
+#: includes/admin/settings/class-ticket.php:31
+msgid "Quantity days that the ticket is valid after the purchase."
+msgstr ""
+
+#: includes/admin/settings/class-ticket.php:37
+msgid "Validity Period"
+msgstr ""
+
+#: includes/admin/settings/class-ticket.php:39
+msgid "Number of days that the ticket will be kept at Asaas after its expiration. At the end of this period, the ticket will be removed. It will keep if blank."
+msgstr ""
+
+#: includes/admin/settings/class-ticket.php:56
+#: includes/billing-type/class-ticket.php:42
+msgid "Ticket"
+msgstr ""
+
+#: includes/admin/views/installments-interest-list.php:23
+#: includes/installments/admin/settings/class-installments-fields.php:89
+#: includes/installments/checkout/class-installments-checkout.php:52
+msgid "Installments"
+msgstr ""
+
+#: includes/admin/views/installments-interest-list.php:24
+#: includes/installments/admin/settings/class-installments-fields.php:98
+#: includes/webhook/class-webhook.php:360
+msgid "Interest"
+msgstr ""
+
+#. translators: %s: The plugin name
+#: includes/admin/views/missing-dependency-plugin.php:26
+#: includes/admin/views/missing-subscription-dependency-plugin.php:36
+#, php-format
+msgid "Install %s"
+msgstr ""
+
+#. translators: %s: The plugin name
+#: includes/admin/views/missing-dependency-plugin.php:42
+#: includes/admin/views/missing-subscription-dependency-plugin.php:52
+#, php-format
+msgid "Activate %s"
+msgstr ""
+
+#. translators: 1: The plugin name, 2: The dependency plugin name
+#: includes/admin/views/missing-dependency-plugin.php:49
+#, php-format
+msgid "<strong>%1$s</strong> depends on the %2$s plugin to work."
+msgstr ""
+
+#: includes/admin/views/missing-subscription-dependency-plugin.php:24
+msgid "Visit plugin site"
+msgstr ""
+
+#. translators: 1: The plugin name, 2: The dependency plugin name
+#: includes/admin/views/missing-subscription-dependency-plugin.php:61
+#, php-format
+msgid "The subscriptions feature depends on the <strong>%1$s plugin version %2$s or greater</strong> to work."
+msgstr ""
+
+#: includes/admin/views/subscription-feature-is-ready.php:18
+msgid "The plugin is able to process subscription payments."
+msgstr ""
+
+#. translators: %s: billing cycles
+#: includes/admin/views/subscription-feature-is-ready.php:24
+#, php-format
+msgid "We currently support the following billing cycles: %s."
+msgstr ""
+
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-auto-renewal-toggle.php:18
+msgid "The Asaas WooCommerce plugin does not support the auto renewal toggle feature."
+msgstr ""
+
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-auto-renewal-toggle.php:22
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-manual-renewal.php:22
+msgid "Please, review this setting."
+msgstr ""
+
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-auto-renewal-toggle.php:26
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-manual-renewal.php:26
+msgid "Click here to review WooCommerce Subscriptions settings"
+msgstr ""
+
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-early-renewal.php:15
+msgid "The Asaas WooCommerce plugin does not support the early renewal feature."
+msgstr ""
+
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-early-renewal.php:16
+msgid "That's why it was automatically deactivated in the client's subscription management screen."
+msgstr ""
+
+#: includes/admin/views/unsupported-woocommerce-subscriptions-feature-manual-renewal.php:18
+msgid "The Asaas WooCommerce plugin does not support the manual renewal feature."
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-fields.php:53
+#: includes/anticipation/admin/settings/class-anticipation-settings-status.php:51
+#: includes/cart/class-cart.php:44
+#: includes/checkout/class-checkout.php:43
+#: includes/coupon/class-coupon.php:44
+#: includes/cron/class-expired-pix-cron.php:46
+#: includes/cron/class-expired-ticket-cron.php:43
+#: includes/installments/admin/settings/class-installments-fields.php:45
+#: includes/installments/gateway/class-checkout-installments.php:45
+#: includes/installments/gateway/class-payment-installments.php:47
+#: includes/my-account/class-woocommerce-my-account.php:43
+#: includes/product/admin/settings/class-product-settings.php:44
+#: includes/split/class-split-manager.php:42
+#: includes/subscription/admin/class-subscription-admin.php:48
+#: includes/subscription/admin/settings/class-woocommerce-subscriptions-settings.php:46
+#: includes/subscription/class-subscription.php:70
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:53
+#: includes/webhook/admin/settings/class-webhook-settings-status.php:53
+msgid "Cannot unserialize singleton"
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-fields.php:80
+msgid "Receivable Anticipation"
+msgstr ""
+
+#. translators: This message explains what the enabled setting does.
+#: includes/anticipation/admin/settings/class-anticipation-settings-fields.php:99
+#, php-format
+msgid "Automatically request advance payments on Asaas <a href=\"%s\" target=\"_blank\" rel=\"noopener\">Click here for more details</a>."
+msgstr ""
+
+#. translators: This message explains what needs to be done when the setting is disabled.
+#: includes/anticipation/admin/settings/class-anticipation-settings-fields.php:101
+#, php-format
+msgid "To use this functionality, inform <a href=\"%s\">API Key</a> below."
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-fields.php:110
+msgid "Enable automatic anticipation"
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-fields.php:112
+msgid "Enable"
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-status.php:100
+msgid "Anticipation"
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-status.php:100
+msgid "The automatic anticipation feature is currently available only for business accounts"
+msgstr ""
+
+#: includes/anticipation/admin/settings/class-anticipation-settings-status.php:112
+#: includes/webhook/admin/settings/class-webhook-settings-status.php:147
+msgid "Screen data cannot be loaded at this point in the request"
+msgstr ""
+
+#. translators: %1$s is the error description, %2$s is the Asaas anticipation URL
+#: includes/anticipation/checkout/class-anticipation-interest-handler.php:78
+#, php-format
+msgid "Anticipation not created. %1$s <a href=\"%2$s\" target=\"_blank\" rel=\"noopener\">Click here for more details.</a>"
+msgstr ""
+
+#. translators: %1$s is the net value, %2$s is the Asaas receivable anticipation list URL
+#: includes/anticipation/checkout/class-anticipation-interest-handler.php:86
+#, php-format
+msgid "Anticipation successfully created. Net value of %1$s. Track the status of the advance through Asaas or <a href=\"%2$s\" target=\"_blank\" rel=\"noopener\">clicking here.</a>"
+msgstr ""
+
+#: includes/anticipation/hook/class-anticipation-ajax.php:68
+#: includes/anticipation/hook/class-anticipation-ajax.php:101
+#: includes/connectivity/exception/class-invalid-nonce-exception.php:10
+msgid "Nonce verification failed"
+msgstr ""
+
+#: includes/anticipation/hook/class-anticipation-ajax.php:72
+#: includes/anticipation/hook/class-anticipation-ajax.php:105
+#: includes/connectivity/exception/class-permission-denied-exception.php:10
+msgid "Permission denied"
+msgstr ""
+
+#: includes/api/response/class-error-response.php:26
+msgid "An error processing your order. Contact us."
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:54
+msgid "Visa"
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:59
+msgid "Mastercard"
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:64
+msgid "Amex"
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:69
+msgid "Diners"
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:74
+msgid "Elo"
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:79
+msgid "Discover"
+msgstr ""
+
+#: includes/billing-type/class-credit-card.php:84
+msgid "Hipercard"
+msgstr ""
+
+#: includes/cart/class-cart.php:149
+msgid "The Asaas payment gateway was disabled because it does not support the billing cycle for one or more products in the cart."
+msgstr ""
+
+#. translators: %s: coupon code
+#: includes/cart/class-cart.php:166
+#, php-format
+msgid "The Asaas payment gateway was disabled because it does not support the following coupon code: %s."
+msgstr ""
+
+#: includes/checkout/form-field/class-card-expiration.php:42
+msgid "Expiration date"
+msgstr ""
+
+#: includes/checkout/form-field/class-card-expiration.php:107
+msgid "Month"
+msgstr ""
+
+#: includes/checkout/form-field/class-card-expiration.php:110
+msgid "MM"
+msgstr ""
+
+#: includes/checkout/form-field/class-card-expiration.php:128
+msgid "Year"
+msgstr ""
+
+#: includes/checkout/form-field/class-card-expiration.php:131
+msgid "YYYY"
+msgstr ""
+
+#. translators: %s: the field label
+#: includes/checkout/form-field/class-card-expiration.php:159
+#, php-format
+msgid "Expiration %s"
+msgstr ""
+
+#: includes/checkout/form-field/class-card-expiration.php:225
+msgid "<strong>Expiration</strong> must be a non-past date."
+msgstr ""
+
+#. translators: %s: field name
+#: includes/checkout/form-field/class-card-expiration.php:239
+#, php-format
+msgid "%s must have two digits and be a valid month number."
+msgstr ""
+
+#. translators: %s: field name
+#: includes/checkout/form-field/class-card-expiration.php:253
+#, php-format
+msgid "%s must at least 2 digits and be a non-past year."
+msgstr ""
+
+#: includes/checkout/form-field/class-card-security-code.php:74
+msgid "Invalid security code."
+msgstr ""
+
+#: includes/checkout/form-field/class-card.php:75
+msgid "Name on card"
+msgstr ""
+
+#: includes/checkout/form-field/class-card.php:84
+msgid "Card number"
+msgstr ""
+
+#: includes/checkout/form-field/class-card.php:93
+msgid "Expiration"
+msgstr ""
+
+#: includes/checkout/form-field/class-card.php:101
+msgid "Security code"
+msgstr ""
+
+#: includes/checkout/form-field/class-one-click-options.php:59
+msgid "New Credit Card"
+msgstr ""
+
+#. translators: %s: billing type name
+#: includes/class-wc-asaas.php:289
+#: includes/webhook/class-endpoint.php:274
+#, php-format
+msgid "Billing type %s wasn't registered."
+msgstr ""
+
+#: includes/class-wc-asaas.php:351
+msgid "Asaas needs the CPF or CNPJ at checkout for the integration works."
+msgstr ""
+
+#. translators: %s: Extra Checkout fields for Brazil settings URL
+#: includes/class-wc-asaas.php:357
+#, php-format
+msgid "<a href=\"%s\">Click here</a> to change checkout fields."
+msgstr ""
+
+#: includes/common/notice/validator/class-notice-validator.php:20
+msgid "Invalid notice status."
+msgstr ""
+
+#: includes/connectivity/constant/class-api-connection-message.php:13
+msgid "Valid API Key."
+msgstr ""
+
+#: includes/connectivity/constant/class-api-connection-message.php:18
+msgid "Invalid key or incorrect environment (Sandbox vs Production). Check your API Key."
+msgstr ""
+
+#: includes/connectivity/constant/class-api-connection-message.php:23
+msgid "Access denied: verify if your server IP is authorized to communicate with Asaas."
+msgstr ""
+
+#: includes/connectivity/constant/class-api-connection-message.php:28
+msgid "Temporary instability. Please try again in a few minutes."
+msgstr ""
+
+#: includes/connectivity/data/class-webhook-factory.php:25
+msgid "Webhooks from WooCommerce"
+msgstr ""
+
+#: includes/connectivity/exception/class-api-error-response-exception.php:10
+msgid "Error obtaining response from API"
+msgstr ""
+
+#: includes/coupon/class-coupon.php:74
+msgid "Asaas gateway currently supports the following coupon types: "
+msgstr ""
+
+#: includes/coupon/class-coupon.php:85
+msgid "* supports only unlimited payments."
+msgstr ""
+
+#: includes/gateway/class-credit-card.php:35
+msgid "Asaas Credit Card"
+msgstr ""
+
+#. translators: %s: Asaas website URL
+#: includes/gateway/class-credit-card.php:37
+#, php-format
+msgid "Use <a href=\"%s\">Asaas</a> to allow your customer buy your products in installments using credit card."
+msgstr ""
+
+#: includes/gateway/class-credit-card.php:102
+msgid "Are you sure that this card exists?"
+msgstr ""
+
+#. translators: %d: the order id
+#: includes/gateway/class-credit-card.php:121
+#: includes/gateway/class-pix.php:229
+#: includes/gateway/class-ticket.php:142
+#, php-format
+msgid "Order #%d"
+msgstr ""
+
+#: includes/gateway/class-credit-card.php:154
+msgid "The related payment isn't pending on the gateway."
+msgstr ""
+
+#: includes/gateway/class-credit-card.php:201
+#: includes/gateway/class-credit-card.php:237
+msgid "There was a payment failure and therefore the transaction was reversed."
+msgstr ""
+
+#: includes/gateway/class-credit-card.php:277
+#: includes/gateway/class-pix.php:308
+#: includes/gateway/class-ticket.php:215
+msgid "There was a failure on subscription generation."
+msgstr ""
+
+#: includes/gateway/class-credit-card.php:330
+msgid "Select a credit card"
+msgstr ""
+
+#: includes/gateway/class-gateway.php:593
+msgid "Order not found."
+msgstr ""
+
+#: includes/gateway/class-gateway.php:597
+msgid "This order cannot be refunded via this flow. Please, refund through your payment gateway or externally."
+msgstr ""
+
+#: includes/gateway/class-gateway.php:601
+msgid "Partial refunds are not possible."
+msgstr ""
+
+#: includes/gateway/class-gateway.php:605
+msgid "Due to payment method, to return funds to the customer you will need to issue a refund through your payment gateway or externally."
+msgstr ""
+
+#. translators: %s: Asaas payment id
+#: includes/gateway/class-gateway.php:617
+#, php-format
+msgid "%s payment refund request has been processed successfully."
+msgstr ""
+
+#: includes/gateway/class-gateway.php:620
+msgid "Payment not found. The order cannot be refunded via this flow."
+msgstr ""
+
+#: includes/gateway/class-gateway.php:650
+msgid "Order automatically refunded due to total or partial processing failure."
+msgstr ""
+
+#. translators: 1: the subscription order id, 2: The items names
+#: includes/gateway/class-gateway.php:807
+#, php-format
+msgid "Subscription #%1$d - %2$s"
+msgstr ""
+
+#: includes/gateway/class-pix.php:30
+msgid "Asaas Pix"
+msgstr ""
+
+#. translators: %s: Asaas website URL
+#: includes/gateway/class-pix.php:32
+#, php-format
+msgid "Use <a href=\"%s\">Asaas</a> to allow your customer buy your products by Pix."
+msgstr ""
+
+#: includes/gateway/class-ticket.php:29
+msgid "Asaas Ticket"
+msgstr ""
+
+#. translators: %s: Asaas website URL
+#: includes/gateway/class-ticket.php:31
+#, php-format
+msgid "Use <a href=\"%s\">Asaas</a> to allow your customer buy your products by ticket."
+msgstr ""
+
+#: includes/gateway/class-ticket.php:376
+msgid "Ignore remove tickets by empty setting."
+msgstr ""
+
+#: includes/gateway/class-ticket.php:385
+msgid "No expired ticket to remove."
+msgstr ""
+
+#. translators: %d: Total of removed tickets
+#: includes/gateway/class-ticket.php:418
+#, php-format
+msgid "Total tickets removed: %d"
+msgstr ""
+
+#: includes/helper/class-checkout-helper.php:25
+msgid "Pending"
+msgstr ""
+
+#: includes/helper/class-checkout-helper.php:29
+msgid "Confirmed"
+msgstr ""
+
+#: includes/helper/class-checkout-helper.php:33
+msgid "Overdue"
+msgstr ""
+
+#: includes/helper/class-checkout-helper.php:37
+msgid "Refunded"
+msgstr ""
+
+#: includes/helper/class-checkout-helper.php:41
+msgid "Received in cash"
+msgstr ""
+
+#: includes/helper/class-checkout-helper.php:45
+msgid "Refund requested"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:51
+msgid "WEEKLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:55
+msgid "BIWEEKLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:59
+#: includes/helper/class-subscriptions-helper.php:63
+msgid "MONTHLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:67
+msgid "BIMONTHLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:71
+msgid "QUARTERLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:75
+msgid "SEMIANNUALLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:79
+msgid "YEARLY"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:84
+msgid "Percentage discount"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:85
+msgid "Fixed cart discount"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:86
+msgid "Fixed product discount"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:87
+msgid "Sign Up Fee Discount"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:88
+msgid "Sign Up Fee % Discount"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:89
+msgid "Recurring Product Discount*"
+msgstr ""
+
+#: includes/helper/class-subscriptions-helper.php:90
+msgid "Recurring Product % Discount*"
+msgstr ""
+
+#. translators: %s: field name
+#: includes/helper/class-validation-helper.php:73
+#, php-format
+msgid "%s is a required field."
+msgstr ""
+
+#. translators: %d: maximum installments allowed
+#: includes/installments/admin/settings/class-installments-fields.php:75
+#, php-format
+msgid "Define the installment limit allowed. The max value is <code>%d</code>. Use <code>1</code> to disable this option."
+msgstr ""
+
+#: includes/installments/admin/settings/class-installments-fields.php:80
+msgid "When saving the changes with the installments enabled, an interest table will be released."
+msgstr ""
+
+#: includes/installments/admin/settings/class-installments-fields.php:105
+msgid "Minimum installment value"
+msgstr ""
+
+#. translators: %d: minimum installments value
+#: includes/installments/admin/settings/class-installments-fields.php:108
+#, php-format
+msgid "The minimum value for each installment. The minimum value accepted by Asaas is <code>%s</code>."
+msgstr ""
+
+#. translators: %d: installment number, %s: installment value, %s: interest value
+#: includes/installments/checkout/class-installments-checkout.php:135
+#, php-format
+msgid "%1$dx %2$s (%3$s%% interest)"
+msgstr ""
+
+#: includes/installments/checkout/class-order-interest-handler.php:66
+msgid "Fail to add installment interest fee."
+msgstr ""
+
+#. translators: %s: interest percentage per installment
+#: includes/installments/checkout/class-wc-interest-order-item-fee.php:90
+#, php-format
+msgid "Interest (%s%% per installment)"
+msgstr ""
+
+#. translators: %d: number of installments
+#: includes/installments/checkout/class-wc-interest-order-item-fee.php:93
+#, php-format
+msgid "%d installment"
+msgid_plural "%d installments"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: available meta keys
+#: includes/meta-data/class-customer.php:97
+#, php-format
+msgid "Invalid customer meta key. The available keys are: %s"
+msgstr ""
+
+#. translators: %s: billing cycles
+#: includes/product/admin/settings/class-product-settings.php:72
+#, php-format
+msgid "Asaas gateway currently supports the following billing cycles: %s."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:21
+msgid "Wallet saved successfully"
+msgstr ""
+
+#: includes/split/class-split-message-list.php:22
+msgid "The wallet was kept as draft due to the invalid values provided."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:23
+msgid "Wallet nickname cannot be empty."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:24
+msgid "Wallet ID cannot be empty."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:25
+msgid "Invalid Wallet ID."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:26
+msgid "Wallet nickname is already in use."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:27
+msgid "Wallet ID is already in use."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:28
+msgid "An error occurred while updating the wallet."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:29
+msgid "Select the wallet and fill in the percentage value in the table to register a new split wallet."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:30
+msgid "The sum of the split wallets cannot exceeds 100%."
+msgstr ""
+
+#: includes/split/class-split-message-list.php:31
+msgid "Invalid percentage value."
+msgstr ""
+
+#: includes/split/data/class-split-types.php:16
+msgid "Percentage"
+msgstr ""
+
+#: includes/split/data/class-split-types.php:20
+msgid "Fixed value"
+msgstr ""
+
+#: includes/split/hook/class-split-plugins-list-hook.php:20
+msgid "Manage Split Wallets"
+msgstr ""
+
+#: includes/split/hook/class-split-settings-hook.php:23
+#: includes/split/service/class-split-wc-order-service.php:17
+msgid "Split"
+msgstr ""
+
+#: includes/split/hook/class-split-settings-hook.php:25
+msgid "Split does not support subscriptions."
+msgstr ""
+
+#: includes/split/hook/class-split-settings-hook.php:38
+#: includes/split/post-type/class-asaas-wallet-post-type.php:16
+msgid "Wallets"
+msgstr ""
+
+#: includes/split/hook/class-split-wallet-admin-table-hook.php:23
+#: includes/split/hook/class-split-wallet-edit-page-hook.php:54
+msgid "Nickname"
+msgstr ""
+
+#: includes/split/hook/class-split-wallet-admin-table-hook.php:24
+msgid "Wallet ID"
+msgstr ""
+
+#: includes/split/hook/class-split-wallet-admin-table-hook.php:25
+msgid "Date created"
+msgstr ""
+
+#: includes/split/hook/class-split-wallet-admin-table-hook.php:42
+msgid "Not available"
+msgstr ""
+
+#: includes/split/hook/class-split-wallet-edit-page-hook.php:88
+msgid "Created on"
+msgstr ""
+
+#: includes/split/metabox/class-edit-wallet-meta-box.php:12
+msgid "Edit wallet"
+msgstr ""
+
+#: includes/split/notice/class-prefixer.php:8
+msgid "Split:"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:17
+#: includes/split/views/object-setting/object-setting-table.php:20
+msgid "Wallet"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:18
+msgid "Split Wallets"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:19
+msgid "Add New"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:20
+msgid "Add New Wallet"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:21
+#: includes/split/post-type/class-asaas-wallet-post-type.php:22
+msgid "Edit Wallet"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:23
+msgid "New Wallet"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:24
+#: includes/split/post-type/class-asaas-wallet-post-type.php:25
+msgid "View Wallet"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:26
+msgid "Search Wallets"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:27
+msgid "No wallets found"
+msgstr ""
+
+#: includes/split/post-type/class-asaas-wallet-post-type.php:28
+msgid "No wallets found in Trash"
+msgstr ""
+
+#. translators: %1$s is the percentual value, %2$s is the wallet nickname, %3$s is the wallet ID.
+#: includes/split/service/class-split-gateway-log-service.php:18
+#, php-format
+msgid "Split configured at the value of %1$s%% for wallet %2$s Wallet ID: %3$s"
+msgstr ""
+
+#. translators: %1$s%% is the percentual value, %2$s is the wallet nickname, %3$s is the wallet ID.
+#: includes/split/service/class-split-wc-order-service.php:21
+#, php-format
+msgid "%1$s%% for wallet %2$s Wallet ID: %3$s"
+msgstr ""
+
+#: includes/split/views/object-setting/object-setting-row.php:28
+msgid "Delete row"
+msgstr ""
+
+#: includes/split/views/object-setting/object-setting-table.php:22
+msgid "Application type"
+msgstr ""
+
+#: includes/split/views/object-setting/object-setting-table.php:24
+msgid "Value"
+msgstr ""
+
+#: includes/split/views/object-setting/object-setting-table.php:31
+msgid "No wallet registered. Split will not be applied to purchases."
+msgstr ""
+
+#: includes/split/views/object-setting/object-setting-table.php:59
+msgid "Add new wallet"
+msgstr ""
+
+#: includes/split/views/split-wallet-edit-field.php:14
+msgid "Wallet ID:"
+msgstr ""
+
+#: includes/split/views/split-wallet-misc-post-author.php:9
+msgid "Created by"
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:87
+msgid "Subscription update error:"
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:88
+msgid "Subscription update error"
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:147
+msgid "Asaas does not support changes on subscription start date."
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:151
+msgid "Asaas does not support changes on trial date."
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:157
+msgid "The next payment date must be greater than the current one."
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:161
+msgid "The end subscription date must be greater than the current one."
+msgstr ""
+
+#. translators: %s: supported billing cicles
+#: includes/subscription/admin/class-subscription-admin.php:171
+#, php-format
+msgid "Asaas does not support the chosen billing period. Please, choose a valid period: %s."
+msgstr ""
+
+#: includes/subscription/admin/class-subscription-admin.php:185
+msgid "To update the billing cycle, next payment date or subscription end date you need to have tokenization enabled in your Asaas account."
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:84
+msgid "Webhook"
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:87
+msgid "Webhooks are responsible for updating orders in your store according to the payment status update on Asaas. If your orders are not being downloaded, click the button below to re-enable your synchronization queue."
+msgstr ""
+
+#. translators: %1$s: URL to logs.
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:89
+#, php-format
+msgid "If you have <a href=\"%1$s\">identified in the logs</a> that your webhook queue is interrupted, click on the bottom below to reactivate it"
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:90
+#: includes/webhook/admin/views/webhook-status-section.php:40
+msgid "Re-enable webhook queue"
+msgstr ""
+
+#. translators: %1$s: URL to Asaas logs, %2$s: URL to Asaas documentation.
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:92
+#, php-format
+msgid "If even after reactivation you find that your queue is still being interrupted, please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">access Asaas</a> to check the webhook information sent. If you have any questions, you can <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">access the documentation</a> or contact Asaas support (integracoes@asaas.com.br)"
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:114
+msgid "Email for alerts"
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:114
+msgid "required"
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-fields.php:116
+msgid "If your synchronization queue is interrupted due to any error, we will send an alert to the email provided above."
+msgstr ""
+
+#. translators: %s: URL to the gateway settings page.
+#: includes/webhook/admin/settings/class-webhook-settings-status.php:97
+#, php-format
+msgid "We have identified issues with the connection of your store to the Asaas Payment Method, caused by an invalid or missing API key. <a href=\"%s\">Click here to provide a new key</a>."
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings-status.php:121
+msgid "The provided API key is invalid"
+msgstr ""
+
+#. translators: %s: URL to the system status page.
+#: includes/webhook/admin/settings/class-webhook-settings-status.php:132
+#, php-format
+msgid "We've identified that the Asaas webhook queue is interrupted. <a href=\"%s\">Click here to reactivate</a>"
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings.php:42
+msgid "Please enter a valid email notification address."
+msgstr ""
+
+#: includes/webhook/admin/settings/class-webhook-settings.php:43
+msgid "Required field"
+msgstr ""
+
+#: includes/webhook/admin/views/webhook-status-section.php:12
+msgid "We validate your API Key with Asaas. If correct and your server has access permission, the connection becomes active. In case of error, we show the HTTP code and guidance to fix it."
+msgstr ""
+
+#: includes/webhook/admin/views/webhook-status-section.php:18
+msgid "Asaas Payment Method"
+msgstr ""
+
+#: includes/webhook/admin/views/webhook-status-section.php:23
+msgid "Connection to Asaas"
+msgstr ""
+
+#: includes/webhook/admin/views/webhook-status-section.php:29
+#: includes/webhook/admin/views/webhook-status-section.php:30
+msgid "Webhook Status (Payment Settlements)"
+msgstr ""
+
+#: includes/webhook/admin/views/webhook-status-section.php:30
+msgid "Webhook queue status"
+msgstr ""
+
+#: includes/webhook/admin/views/webhook-status-section.php:37
+msgid "If the webhook queue is interrupted, click the button next to it to reactivate it"
+msgstr ""
+
+#: includes/webhook/class-endpoint.php:179
+msgid "Webhook has been processed with success"
+msgstr ""
+
+#: includes/webhook/class-endpoint.php:182
+msgid "Webhook was ignored by an external filter in this store"
+msgstr ""
+
+#. translators: %s: event name
+#: includes/webhook/class-endpoint.php:258
+#, php-format
+msgid "Event %s wasn't registered."
+msgstr ""
+
+#. translators: %s: event name
+#: includes/webhook/class-webhook.php:144
+#, php-format
+msgid "Untreated event: %s"
+msgstr ""
+
+#: includes/webhook/class-webhook.php:171
+msgid "Payment confirmed."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:186
+msgid "This order was already paid."
+msgstr ""
+
+#. translators: %s: subscription status
+#: includes/webhook/class-webhook.php:199
+#, php-format
+msgid "Prevents 500 error from WooCommerce Subscriptions: unable to change subscription status to %s."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:201
+msgid "An error occurred"
+msgstr ""
+
+#: includes/webhook/class-webhook.php:203
+msgid "Unable to change the order status."
+msgstr ""
+
+#. translators: 1: The due date, 2: The subscription order id
+#: includes/webhook/class-webhook.php:278
+#, php-format
+msgid "Payment created. Due date: %1$s / Subscription id: %2$s"
+msgstr ""
+
+#: includes/webhook/class-webhook.php:282
+msgid "Payment created."
+msgstr ""
+
+#. translators: 1: The payment link
+#: includes/webhook/class-webhook.php:290
+#, php-format
+msgid "Payment link: %1$s"
+msgstr ""
+
+#: includes/webhook/class-webhook.php:316
+msgid "PAYMENT_DELETED: prevents 500 error from WooCommerce Subscriptions: unable to change subscription/order status to cancelled."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:318
+msgid "Payment deleted."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:338
+msgid "PAYMENT_OVERDUE: prevents 500 error from WooCommerce Subscriptions: unable to change subscription/order status to failed."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:340
+msgid "Payment overdue."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:352
+msgid "Fine tax"
+msgstr ""
+
+#: includes/webhook/class-webhook.php:453
+msgid "PAYMENT_REFUNDED: prevents 500 error from WooCommerce Subscriptions: unable to change subscription/order status to refunded."
+msgstr ""
+
+#: includes/webhook/class-webhook.php:475
+msgid "PAYMENT_RESTORED: prevents 500 error from WooCommerce Subscriptions: unable to change subscription/order status to pending."
+msgstr ""
+
+#: templates/order/credit-card-thankyou.php:19
+#: templates/order/pix-thankyou.php:20
+#: templates/order/ticket-thankyou.php:18
+msgid "Payment details"
+msgstr ""
+
+#. translators: %s: the order status
+#: templates/order/credit-card-thankyou.php:26
+#, php-format
+msgid "Status: <strong>%s</strong>"
+msgstr ""
+
+#. translators: %1$s: trial end date
+#: templates/order/credit-card-thankyou.php:43
+#: templates/order/pix-thankyou.php:70
+#: templates/order/ticket-thankyou.php:72
+#, php-format
+msgid "This order does not require payment at this time. Your trial period has started and is valid until %1$s."
+msgstr ""
+
+#: templates/order/credit-card-thankyou.php:45
+#: templates/order/pix-thankyou.php:72
+#: templates/order/ticket-thankyou.php:74
+msgid "This order does not require payment at this time."
+msgstr ""
+
+#: templates/order/credit-card-thankyou.php:48
+#: templates/order/pix-thankyou.php:75
+#: templates/order/ticket-thankyou.php:77
+msgid "Unable to load payment details."
+msgstr ""
+
+#. translators: %d: expiration time
+#: templates/order/pix-thankyou-instructions.php:14
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/order/pix-thankyou-instructions.php:18
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/order/pix-thankyou-instructions.php:22
+msgid "day"
+msgid_plural "days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/order/pix-thankyou-instructions.php:27
+msgid "Open the app or Internet Banking to pay."
+msgstr ""
+
+#: templates/order/pix-thankyou-instructions.php:28
+msgid "In the Pix option, choose \"Read QR Code\"."
+msgstr ""
+
+#: templates/order/pix-thankyou-instructions.php:31
+msgid "Scan the QR Code or, if you prefer, copy the code to Pix Copy and Paste."
+msgstr ""
+
+#: templates/order/pix-thankyou-instructions.php:34
+msgid "Review the information and confirm payment. Ready! The order status will be updated immediately."
+msgstr ""
+
+#. translators: 1: expiration time setting 2: expiration period
+#: templates/order/pix-thankyou-instructions.php:40
+#, php-format
+msgid "You have %1$d %2$s to pay. After that time, your order will be cancelled."
+msgstr ""
+
+#: templates/order/pix-thankyou.php:25
+msgid "Pay with Pix."
+msgstr ""
+
+#: templates/order/pix-thankyou.php:50
+msgid "Code copied to clipboard"
+msgstr ""
+
+#: templates/order/pix-thankyou.php:51
+msgid "Click here to copy the Pix code"
+msgstr ""
+
+#: templates/order/ticket-thankyou.php:24
+msgid "Your tickets are ready."
+msgstr ""
+
+#. translators: %1$s: count installments %2$s: total installments
+#: templates/order/ticket-thankyou.php:36
+#, php-format
+msgid "Installment %1$s of %2$s."
+msgstr ""
+
+#: templates/order/ticket-thankyou.php:40
+#: templates/order/ticket-thankyou.php:53
+msgid "Access ticket"
+msgstr ""
+
+#: templates/order/ticket-thankyou.php:50
+msgid "Your ticket is ready."
+msgstr ""
