@@ -9,7 +9,7 @@
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     checkout-tabs-wp-ml
  * Domain Path:     /languages
- * Version: 0.0.2
+ * Version: 0.0.3
  * GitHub Plugin URI: caslusilver/own-gateway-clone
  * Primary Branch:  main
  *
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'OWN_GATEWAY_CLONE_VERSION', '0.0.2' );
+define( 'OWN_GATEWAY_CLONE_VERSION', '0.0.3' );
 define( 'OWN_GATEWAY_CLONE_PLUGIN_FILE', __FILE__ );
 
 require_once 'autoload.php';

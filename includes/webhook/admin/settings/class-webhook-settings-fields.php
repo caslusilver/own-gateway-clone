@@ -128,6 +128,16 @@ class Webhook_Settings_Fields {
 					'priority'          => 20,
 					'sanitize_callback' => 'sanitize_text_field',
 				),
+				'webhook_validation_url' => array(
+					'title'             => __( 'URL da API de validacao', 'checkout-tabs-wp-ml' ),
+					'type'              => 'text',
+					'description'       => __( 'Endpoint de validacao de pagamento usado ao receber o webhook.', 'checkout-tabs-wp-ml' ),
+					'default'           => 'https://webhook.cubensisstore.com.br/webhook/payment-status',
+					'shared'            => true,
+					'section'           => 'webhook',
+					'priority'          => 30,
+					'sanitize_callback' => 'esc_url_raw',
+				),
 			)
 		);
 	}

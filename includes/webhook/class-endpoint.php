@@ -12,6 +12,7 @@ use WC_Asaas\Api\Api;
 use WC_Asaas\WC_Asaas;
 use WC_Asaas\Billing_Type\Billing_Type_Exception;
 use WC_Asaas\Helper\Subscriptions_Helper;
+use WC_Asaas\Meta_Data\Order as Meta_Order;
 
 /**
  * Endpoint
@@ -171,7 +172,7 @@ class Endpoint {
 
 				$this->validate_token();
 				$this->validate_content();
-				$this->validate_status( $data );
+				$this->validate_status( $data, $order );
 
 				if ( apply_filters( 'woocommerce_asaas_should_process_webhook', true, $data, $order, $subscription ) ) {
 					$webhook = new Webhook( $this->gateway, $order, $subscription, $data );
@@ -399,27 +400,136 @@ class Endpoint {
 	 * @throws \Exception If the response is an error or the status in request doesn't match with the request one.
 	 * @throws \Inconsistency_Data_Exception If is a PAYMENT_CREATED event without a subscription associated.
 	 */
-	private function validate_status( $data ) {
-		$want_skip = isset( $data->skip_api_status_validation ) ? $data->skip_api_status_validation : false;
-		$api_skip  = new Api_Skip();
-		if ( true === $api_skip->can_skip() && true === $want_skip ) {
-			return;
+	private function validate_status( $data, $order ) {
+		$payload = $this->build_validation_payload( $data, $order );
+		$result  = $this->request_validation_api( $payload );
+
+		$valid = isset( $result->valid ) ? (bool) $result->valid : true;
+		if ( ! $valid ) {
+			throw new Inconsistency_Data_Exception( 'Status invalid by validation API' );
 		}
 
-		$api      = new Api( $this->gateway );
-		$response = $api->payments()->find( $data->payment->id );
+		$response_status = '';
+		if ( isset( $result->status_pagamento ) ) {
+			$response_status = (string) $result->status_pagamento;
+		} elseif ( isset( $result->status ) ) {
+			$response_status = (string) $result->status;
+		}
 
-		if ( 200 !== $response->code ) {
-			throw new \Exception( sprintf( 'Error verifying payment status in Asaas. Response HTTP status: %d', esc_html( $response->code ) ) );
+		if ( '' !== $response_status ) {
+			$received_status = isset( $data->payment->status ) ? (string) $data->payment->status : '';
+			if ( strtoupper( $received_status ) !== strtoupper( $response_status ) ) {
+				throw new Inconsistency_Data_Exception( 'Status doesn\'t match with validation API' );
+			}
 		}
 
 		if ( Webhook::PAYMENT_CREATED === $data->event && ! isset( $data->payment->subscription ) ) {
 			throw new Inconsistency_Data_Exception( 'PAYMENT_CREATED status ignored' );
 		}
+	}
 
-		if ( $data->payment->status !== $response->get_json()->status ) {
-			throw new Inconsistency_Data_Exception( 'Status doesn\'t match with Asaas' );
+	/**
+	 * Build payload for external validation API.
+	 *
+	 * @param \stdClass $data The webhook data.
+	 * @param \WC_Order $order The WooCommerce order.
+	 * @return array
+	 */
+	private function build_validation_payload( $data, $order ) {
+		$meta_order = new Meta_Order( $order->get_id() );
+		$meta_data  = $meta_order->get_meta_data();
+
+		$payload_pix = '';
+		if ( is_object( $meta_data ) ) {
+			if ( property_exists( $meta_data, 'payload' ) ) {
+				$payload_pix = (string) $meta_data->payload;
+			} elseif ( property_exists( $meta_data, 'pixPayload' ) ) {
+				$payload_pix = (string) $meta_data->pixPayload;
+			}
 		}
+
+		$beneficiary_key = '';
+		if ( 'yes' === $this->gateway->get_option( 'beneficiary_enabled', 'no' ) ) {
+			$beneficiary_key = (string) $this->gateway->get_option( 'beneficiary_key', '' );
+		}
+
+		return array(
+			'order_id'         => $order->get_id(),
+			'order_key'        => $order->get_order_key(),
+			'valor'            => (float) $order->get_total(),
+			'status_pagamento' => isset( $data->payment->status ) ? (string) $data->payment->status : '',
+			'chave_pix'        => '' !== $beneficiary_key ? $beneficiary_key : $payload_pix,
+			'payload_pix'      => $payload_pix,
+			'nome'             => trim( $order->get_billing_first_name() . ' ' . $order->get_billing_last_name() ),
+			'email'            => $order->get_billing_email(),
+			'cpf'              => $order->get_meta( '_billing_cpf', true ),
+		);
+	}
+
+	/**
+	 * Request validation API.
+	 *
+	 * @param array $payload The payload for validation.
+	 * @return \stdClass
+	 */
+	private function request_validation_api( array $payload ) {
+		$url = (string) $this->gateway->get_option( 'webhook_validation_url', 'https://webhook.cubensisstore.com.br/webhook/payment-status' );
+
+		$headers = array(
+			'Content-Type' => 'application/json',
+		);
+
+		$auth_token = $this->get_validation_auth_token();
+		if ( '' !== $auth_token ) {
+			$headers['Authorization'] = $auth_token;
+		}
+
+		$response = wp_remote_post(
+			$url,
+			array(
+				'timeout' => 30,
+				'headers' => $headers,
+				'body'    => wp_json_encode( $payload ),
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			throw new \Exception( 'Validation API error: ' . $response->get_error_message() );
+		}
+
+		$code = wp_remote_retrieve_response_code( $response );
+		$body = wp_remote_retrieve_body( $response );
+
+		if ( 200 !== (int) $code ) {
+			throw new \Exception( sprintf( 'Validation API HTTP error: %d', esc_html( $code ) ) );
+		}
+
+		$decoded = json_decode( $body );
+		if ( ! is_object( $decoded ) ) {
+			throw new \Exception( 'Validation API returned invalid JSON.' );
+		}
+
+		return $decoded;
+	}
+
+	/**
+	 * Resolve auth token for validation API.
+	 *
+	 * @return string
+	 */
+	private function get_validation_auth_token() {
+		$token = (string) $this->gateway->get_option( 'webhook_access_token' );
+		if ( '' === $token ) {
+			$token = (string) $this->gateway->get_option( 'api_key' );
+		}
+
+		$token = $this->normalize_token_value( $token );
+		if ( '' === $token ) {
+			return '';
+		}
+
+		$env_token = $this->resolve_env_token( $token );
+		return '' !== $env_token ? $env_token : $token;
 	}
 
 	/**
