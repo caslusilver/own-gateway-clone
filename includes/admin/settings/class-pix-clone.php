@@ -76,6 +76,42 @@ class Pix_Clone extends Settings {
 					'section'  => 'gateway',
 					'priority' => 20,
 				),
+				'beneficiary_enabled' => array(
+					'title'       => __( 'Beneficiario', 'checkout-tabs-wp-ml' ),
+					'type'        => 'checkbox',
+					'label'       => __( 'Enviar dados do beneficiario no payload', 'checkout-tabs-wp-ml' ),
+					'description' => __( 'Ative para incluir dados de beneficiario nas cobrancas Pix.', 'checkout-tabs-wp-ml' ),
+					'default'     => 'no',
+					'section'     => 'gateway',
+					'priority'    => 30,
+				),
+				'beneficiary_name' => array(
+					'title'    => __( 'Nome do beneficiario', 'checkout-tabs-wp-ml' ),
+					'type'     => 'text',
+					'default'  => '',
+					'section'  => 'gateway',
+					'priority' => 31,
+				),
+				'beneficiary_key_type' => array(
+					'title'    => __( 'Tipo da chave', 'checkout-tabs-wp-ml' ),
+					'type'     => 'select',
+					'default'  => 'email',
+					'options'  => array(
+						'celular'  => __( 'Celular', 'checkout-tabs-wp-ml' ),
+						'cpf'      => __( 'CPF', 'checkout-tabs-wp-ml' ),
+						'email'    => __( 'Email', 'checkout-tabs-wp-ml' ),
+						'aleatoria' => __( 'Aleatoria', 'checkout-tabs-wp-ml' ),
+					),
+					'section'  => 'gateway',
+					'priority' => 32,
+				),
+				'beneficiary_key' => array(
+					'title'    => __( 'Chave', 'checkout-tabs-wp-ml' ),
+					'type'     => 'text',
+					'default'  => '',
+					'section'  => 'gateway',
+					'priority' => 33,
+				),
 			)
 		);
 	}

@@ -5,7 +5,7 @@ Tags: pix, payment, payment gateway, woocommerce, webhook
 Requires at least: 4.4
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,6 @@ Este gateway requer WooCommerce 2.6 ou superior.
 
 == Changelog ==
 
-= 0.0.1 =
+= 0.0.2 =
 
-* Inicial: Ajuste de titularidade e base para novo gateway.
+* Adiciona suporte a webhook com headers alternativos e dados de beneficiario no payload.

@@ -104,6 +104,10 @@ class Pix_Clone extends Gateway {
 		}
 
 		$payload  = $this->build_invoice_payload( $wc_order );
+		if ( is_wp_error( $payload ) ) {
+			$this->send_checkout_failure( $payload->get_error_messages() );
+			return;
+		}
 		$service  = new Webhook_Invoices_Service();
 		// Chamada server-side para proteger a chave do webhook.
 		$response = $service->create_invoice( $payload, $this );
@@ -143,7 +147,7 @@ class Pix_Clone extends Gateway {
 	 * Build payload for webhook invoice creation.
 	 *
 	 * @param WC_Order $wc_order The WooCommerce order.
-	 * @return array
+	 * @return array|\WP_Error
 	 */
 	private function build_invoice_payload( WC_Order $wc_order ) {
 		$items = array();
@@ -159,7 +163,7 @@ class Pix_Clone extends Gateway {
 			);
 		}
 
-		return array(
+		$payload = array(
 			'source'    => 'woo-asaas-clone',
 			'order_id'  => $wc_order->get_id(),
 			'order_key' => $wc_order->get_order_key(),
@@ -174,6 +178,54 @@ class Pix_Clone extends Gateway {
 				'cnpj'  => $wc_order->get_meta( '_billing_cnpj', true ),
 			),
 			'items'     => $items,
+		);
+
+		$beneficiary_payload = $this->get_beneficiary_payload();
+		if ( is_wp_error( $beneficiary_payload ) ) {
+			return $beneficiary_payload;
+		}
+
+		$payload['beneficiario'] = ! empty( $beneficiary_payload );
+		if ( ! empty( $beneficiary_payload ) ) {
+			$payload = array_merge( $payload, $beneficiary_payload );
+		}
+
+		return $payload;
+	}
+
+	/**
+	 * Build beneficiary payload when enabled.
+	 *
+	 * @return array|\WP_Error
+	 */
+	private function get_beneficiary_payload() {
+		if ( 'yes' !== $this->get_option( 'beneficiary_enabled', 'no' ) ) {
+			return array();
+		}
+
+		$name     = sanitize_text_field( (string) $this->get_option( 'beneficiary_name', '' ) );
+		$key_type = sanitize_text_field( (string) $this->get_option( 'beneficiary_key_type', '' ) );
+		$key      = sanitize_text_field( (string) $this->get_option( 'beneficiary_key', '' ) );
+
+		$allowed_types = array( 'celular', 'cpf', 'email', 'aleatoria' );
+		if ( '' === $name || '' === $key_type || '' === $key ) {
+			return new \WP_Error(
+				'asaas_clone_beneficiary_missing',
+				__( 'Preencha os campos do beneficiario para enviar no payload.', 'checkout-tabs-wp-ml' )
+			);
+		}
+
+		if ( ! in_array( $key_type, $allowed_types, true ) ) {
+			return new \WP_Error(
+				'asaas_clone_beneficiary_invalid_type',
+				__( 'Tipo de chave do beneficiario invalido.', 'checkout-tabs-wp-ml' )
+			);
+		}
+
+		return array(
+			'beneficiario_nome'       => $name,
+			'beneficiario_tipo_chave' => $key_type,
+			'beneficiario_chave'      => $key,
 		);
 	}
 

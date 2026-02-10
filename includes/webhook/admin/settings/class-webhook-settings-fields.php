@@ -119,6 +119,15 @@ class Webhook_Settings_Fields {
 					'priority'          => 10,
 					'sanitize_callback' => array( $webhook_settings, 'validate_email_notification_field' ),
 				),
+				'webhook_access_token' => array(
+					'title'             => __( 'Auth key name (Webhook)', 'checkout-tabs-wp-ml' ),
+					'type'              => 'text',
+					'description'       => __( 'Nome da chave usada para validar o webhook. Aceita Authorization, X-Webhook-Token ou Asaas-Access-Token. Se voce informar um nome (ex: authorization), o plugin resolve via sakm_get_key.', 'checkout-tabs-wp-ml' ),
+					'shared'            => true,
+					'section'           => 'webhook',
+					'priority'          => 20,
+					'sanitize_callback' => 'sanitize_text_field',
+				),
 			)
 		);
 	}

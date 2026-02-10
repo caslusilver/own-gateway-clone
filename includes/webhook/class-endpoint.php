@@ -297,10 +297,85 @@ class Endpoint {
 	 * @throws \Exception If the token is invalid.
 	 */
 	private function validate_token() {
-		$access_token = isset( $_SERVER['HTTP_ASAAS_ACCESS_TOKEN'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_ASAAS_ACCESS_TOKEN'] ) ) : '';
-		if ( $this->gateway->get_option( 'webhook_access_token' ) !== $access_token && html_entity_decode( $this->gateway->get_option( 'webhook_access_token' ) ) !== $access_token ) {
+		$access_token = $this->get_request_token();
+		if ( '' === $access_token ) {
 			throw new \Exception( 'Invalid Token' );
 		}
+
+		$expected_token = (string) $this->gateway->get_option( 'webhook_access_token' );
+		if ( '' === $expected_token ) {
+			$expected_token = (string) $this->gateway->get_option( 'api_key' );
+		}
+		$expected_token = html_entity_decode( $expected_token );
+
+		$expected_token = $this->normalize_token_value( $expected_token );
+		$expected_env   = $this->resolve_env_token( $expected_token );
+		$request_env    = $this->resolve_env_token( $access_token );
+
+		$expected_candidates = array_filter( array( $expected_token, $expected_env ) );
+		$valid               = in_array( $access_token, $expected_candidates, true );
+		if ( ! $valid && '' !== $request_env ) {
+			$valid = in_array( $request_env, $expected_candidates, true );
+		}
+
+		if ( ! $valid ) {
+			throw new \Exception( 'Invalid Token' );
+		}
+	}
+
+	/**
+	 * Read token from supported headers.
+	 *
+	 * @return string
+	 */
+	private function get_request_token() {
+		$authorization = isset( $_SERVER['HTTP_AUTHORIZATION'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_AUTHORIZATION'] ) ) : '';
+		$redirect_auth = isset( $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ) ) : '';
+		$webhook_token = isset( $_SERVER['HTTP_X_WEBHOOK_TOKEN'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_WEBHOOK_TOKEN'] ) ) : '';
+		$asaas_token   = isset( $_SERVER['HTTP_ASAAS_ACCESS_TOKEN'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_ASAAS_ACCESS_TOKEN'] ) ) : '';
+
+		$token = '';
+		if ( '' !== $authorization ) {
+			$token = $authorization;
+		} elseif ( '' !== $redirect_auth ) {
+			$token = $redirect_auth;
+		} elseif ( '' !== $webhook_token ) {
+			$token = $webhook_token;
+		} elseif ( '' !== $asaas_token ) {
+			$token = $asaas_token;
+		}
+
+		return $this->normalize_token_value( $token );
+	}
+
+	/**
+	 * Normalize token value (trim and remove Bearer prefix).
+	 *
+	 * @param string $token The raw token.
+	 * @return string
+	 */
+	private function normalize_token_value( $token ) {
+		$token = trim( (string) $token );
+		if ( 0 === stripos( $token, 'Bearer ' ) ) {
+			$token = trim( substr( $token, 7 ) );
+		}
+
+		return $token;
+	}
+
+	/**
+	 * Resolve token from environment key name.
+	 *
+	 * @param string $key_name The key name.
+	 * @return string
+	 */
+	private function resolve_env_token( $key_name ) {
+		if ( '' === $key_name || ! function_exists( 'sakm_get_key' ) ) {
+			return '';
+		}
+
+		$resolved = trim( (string) sakm_get_key( $key_name ) );
+		return $resolved;
 	}
 
 	/**
